@@ -47,14 +47,14 @@ android {
             dimension "mode"
             applicationIdSuffix '.dev'
             versionNameSuffix "-dev"
-            resValue "string", "app_name", "Flutter Demo Dev"
+            resValue "string", "app_name", "MyApp Dev"
         }
         prod {
             applicationId 'com.su93rheroes.bankofmnd'
-            resValue "string", "app_name", "Flutter Demo"
+            resValue "string", "app_name", "MyApp"
         }
     }
-    
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.flutter_template"

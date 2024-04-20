@@ -1,10 +1,12 @@
 # flutter_template
 
-A new Flutter project.
+A new Flutter project Template.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application.That have all necessary boilder plate code and dependencies that need to make a flutter application.
+
+- Flutter application flavours
 
 A few resources to get you started if this is your first Flutter project:
 

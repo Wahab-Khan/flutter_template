@@ -8,16 +8,19 @@
             "name": "flutter_template Prod",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release",
-            "program": "lib/app_prod.dart"
+            "flutterMode": "debug",
+            "program": "lib/app_prod.dart",
+             "args": ["--flavor","prod", "--target" , "lib/app_prod.dart"]
         },
         {
             "name": "flutter_template QA",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile",
-            "program": "lib/app_qa.dart"
-        },
+            "flutterMode": "debug",
+            "program": "lib/app_qa.dart",
+            "args": ["--flavor","dev", "--target" , "lib/app_qa.dart"]
+        }
+    ,
         // {
         //     "name": "Launch production",
         //     "request": "launch",

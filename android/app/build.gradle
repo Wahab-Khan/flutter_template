@@ -40,6 +40,21 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+
+    flavorDimensions "mode"
+    productFlavors {
+        dev {              
+            dimension "mode"
+            applicationIdSuffix '.dev'
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "Flutter Demo Dev"
+        }
+        prod {
+            applicationId 'com.su93rheroes.bankofmnd'
+            resValue "string", "app_name", "Flutter Demo"
+        }
+    }
+    
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.flutter_template"

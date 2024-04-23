@@ -8,7 +8,7 @@
             "name": "flutter_template Prod",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release",
+            "flutterMode": "debug",
             "program": "lib/app_prod.dart",
              "args": ["--flavor","prod", "--target" , "lib/app_prod.dart"]
         },

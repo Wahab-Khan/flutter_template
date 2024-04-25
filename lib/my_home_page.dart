@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/flavour_config.dart';
 import 'package:flutter_template/setting_screen.dart';
+import 'package:flutter_template/translations/locale_keys.g.dart';
 
 class SideMenuModel {
   final String screenName;
@@ -46,7 +48,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Text(FlavorConfig.instance.flavor.toString()),
             Text(
-              'This is base url for QA ${FlavorConfig.instance.domainURL}',
+              '${LocaleKeys.baseURL.tr()} ${FlavorConfig.instance.domainURL}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],

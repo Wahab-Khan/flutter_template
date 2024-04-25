@@ -1,11 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/flavour_config.dart';
 import 'package:flutter_template/my_home_page.dart';
 
-void main() {
+void main() async {
   FlavorConfig(flavor: AppFlavors.prod, domainURL: "prod.api.com/v1");
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      path: 'assets/translations',
+      fallbackLocale: const Locale('ar'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +24,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'App Live Version',
       // themeMode: ,
       // darkTheme: ,

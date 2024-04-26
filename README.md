@@ -22,8 +22,13 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Flutter native splash](https://pub.dev/packages/flutter_native_splash)
 
 - Add differnt Locale (Lauguage supports) en and ar, check the provided link for more information.
+
   - [Easy Localization](https://pub.dev/packages/easy_localization)
   - run this command to generate locale_keys file : flutter pub run easy_localization:generate -S assets/translations -f keys -O "lib/translations" -o locale_keys.g.dart (this command is missing for obove link)
+
+- Preserve Locale with Shared preferences
+
+  - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 
 A few resources to get you started if this is your first Flutter project:
 

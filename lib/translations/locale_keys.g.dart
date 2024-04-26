@@ -2,5 +2,6 @@
 
 abstract class  LocaleKeys {
   static const baseURL = 'baseURL';
+  static const language = 'language';
 
 }

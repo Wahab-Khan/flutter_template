@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/feature/camera/take_profile_picture.dart';
@@ -11,6 +13,9 @@ class ProfilePicture extends StatefulWidget {
 
 class _ProfilePictureState extends State<ProfilePicture> {
   List<CameraDescription>? cameras;
+
+  String? imagePath;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -41,7 +46,13 @@ class _ProfilePictureState extends State<ProfilePicture> {
                   MaterialPageRoute(
                     builder: (context) => TakePictureScreen(camera: camera),
                   ),
-                );
+                ).then((result) {
+                  if (result is XFile) {
+                    setState(() {
+                      imagePath = result.path;
+                    });
+                  }
+                });
               } else {
                 // Handle no camera case (optional)
                 print('No cameras available');
@@ -51,7 +62,9 @@ class _ProfilePictureState extends State<ProfilePicture> {
               minRadius: 50,
               maxRadius: 100,
               backgroundColor: Colors.red,
-              child: Icon(Icons.person),
+              child: imagePath == null ? Icon(Icons.person) : null,
+              backgroundImage:
+                  imagePath != null ? FileImage(File(imagePath!)) : null,
             ),
           ),
         ),

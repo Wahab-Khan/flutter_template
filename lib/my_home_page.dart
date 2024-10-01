@@ -1,24 +1,92 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/flavour_config.dart';
-import 'package:flutter_template/setting_screen.dart';
+import 'package:flutter_template/feature/camera/profile_picture.dart';
+import 'package:flutter_template/feature/setting/setting_screen.dart';
 import 'package:flutter_template/translations/locale_keys.g.dart';
 
-class SideMenuModel {
-  final String screenName;
-  final int screenId;
+enum ScreensData { camera, item, settings }
+// class SideMenuModel {
+//   final String screenName;
+//   final int screenId;
+//
+//   SideMenuModel({required this.screenName, required this.screenId});
+// }
 
-  SideMenuModel({required this.screenName, required this.screenId});
+// extension NavigateToScreen on ScreensData {
+//   Widget get screenName {
+//     switch (this) {
+//       case ScreensData.camera:
+//         // TODO: Handle this case.
+//         Navigator.push(
+//           context,
+//           MaterialPageRoute(
+//             builder: (context) => const SettingScreen(),
+//           ),
+//         );
+//       case ScreensData.item:
+//         // TODO: Handle this case.
+//         Navigator.push(
+//           context,
+//           MaterialPageRoute(builder: (context) => const SettingScreen()),
+//         );
+//       case ScreensData.settings:
+//         // TODO: Handle this case.
+//         Navigator.push(
+//           context,
+//           MaterialPageRoute(builder: (context) => const SettingScreen()),
+//         );
+//     }
+//   }
+// }
+
+IconData getScreenIcon(ScreensData screen) {
+  switch (screen) {
+    case ScreensData.camera:
+      return Icons.camera;
+    case ScreensData.settings:
+      return Icons.settings;
+    case ScreensData.item:
+      return Icons.info;
+    default:
+      return Icons.error;
+  }
+}
+
+Object navigateToScreen(ScreensData screen, BuildContext context) {
+  switch (screen) {
+    case ScreensData.camera:
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ProfilePicture()),
+      );
+    case ScreensData.settings:
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SettingScreen()),
+      );
+    case ScreensData.item:
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SettingScreen()),
+      );
+    default:
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SettingScreen()),
+      );
+  }
 }
 
 class MyHomePage extends StatelessWidget {
-  final sideMenu = [
-    SideMenuModel(screenName: "Item 1", screenId: 1),
-    SideMenuModel(screenName: "Item 2", screenId: 2),
-    SideMenuModel(screenName: "Item 3", screenId: 3),
-    SideMenuModel(screenName: "Item 4", screenId: 4),
-    SideMenuModel(screenName: "Settings", screenId: 5)
-  ];
+  List<String> screens = ScreensData.values.map((e) => e.name).toList();
+  // final sideMenu = [
+  //   SideMenuModel(screenName: "Camera", screenId: 1),
+  //   SideMenuModel(screenName: "Item 2", screenId: 2),
+  //   SideMenuModel(screenName: "Item 3", screenId: 3),
+  //   SideMenuModel(screenName: "Item 4", screenId: 4),
+  //   SideMenuModel(screenName: "Settings", screenId: 5)
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +97,13 @@ class MyHomePage extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView.builder(
-            itemCount: sideMenu.length,
+            itemCount: screens.length,
             itemBuilder: (buildContest, index) {
               return ListTile(
-                  title: Text(sideMenu[index].screenName),
+                  leading: Icon(getScreenIcon(ScreensData.values[index])),
+                  title: Text(screens[index]),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SettingScreen()),
-                    );
+                    navigateToScreen(ScreensData.values[index], context);
                   });
             }),
       ),

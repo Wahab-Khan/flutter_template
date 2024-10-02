@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/flavour_config.dart';
+import 'package:flutter_template/flavors/flavour_config.dart';
 import 'package:flutter_template/feature/camera/profile_picture.dart';
 import 'package:flutter_template/feature/setting/setting_screen.dart';
 import 'package:flutter_template/translations/locale_keys.g.dart';
@@ -93,7 +93,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Debug App"),
+        title: Text("${FlavorConfig.instance.flavor} App"),
       ),
       drawer: Drawer(
         child: ListView.builder(
@@ -116,6 +116,7 @@ class MyHomePage extends StatelessWidget {
               '${LocaleKeys.baseURL.tr()} ${FlavorConfig.instance.domainURL}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text("Secret API key : ${FlavorConfig.instance.apiSecreatKey}")
           ],
         ),
       ),

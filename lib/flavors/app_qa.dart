@@ -2,11 +2,18 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/Themes/darktheme.dart';
 import 'package:flutter_template/Utils/UtilsHelper.dart';
-import 'package:flutter_template/flavour_config.dart';
+import 'package:flutter_template/flavors/flavour_config.dart';
 import 'package:flutter_template/my_home_page.dart';
 
+import '../Themes/theme.dart';
+
 void main() async {
-  FlavorConfig(flavor: AppFlavors.dev, domainURL: "qa.api.com/v1");
+  const apiKey = String.fromEnvironment('API_KEY');
+  if (apiKey.isEmpty) {
+    throw AssertionError('API_KEY is not set');
+  }
+  FlavorConfig(
+      flavor: AppFlavors.dev, domainURL: "qa.api.com/v1", apiKey: apiKey);
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   final local = await getCurrentLocale();
@@ -32,11 +39,10 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeMode.system,
+      theme: theme,
       darkTheme: darkTheme,
+      // routes: ,
       home: MyHomePage(),
     );
   }

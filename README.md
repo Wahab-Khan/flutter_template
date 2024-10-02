@@ -41,7 +41,8 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Publish your Flutter Web Apps on GitHub Pages for Free](https://codewithandrea.com/articles/flutter-web-github-pages/)
   - [Flutter Web Hosting With Github Pages & Custom Domain](https://www.youtube.com/watch?v=iOra0bxlWdE&ab_channel=1ManStartup)
   
-
+- Added keys.json file that contain the secret keys and should not include in Git ... these file should added in .gitignore
+  - [Store API Keys](https://codewithandrea.com/articles/flutter-api-keys-dart-define-env-files/) 
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

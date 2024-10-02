@@ -11,32 +11,32 @@ run_trans:
 
 1eo_dev:
 	@echo 'run project with qa config'
-	flutter run --flavor oeo_dev --target lib/flavors/app_qa.dart
+	flutter run --dart-define-from-file=api-keys.dev.json --flavor dev --target lib/flavors/app_qa.dart
 	@echo 'QA build process completed'
 
 1eo_prod:
 	@echo 'run project with prod config'
-	flutter run --flavor oeo_prod --target lib/flavors/app_prod.dart
+	flutter run --dart-define-from-file=api-keys.prod.json --flavor prod --target lib/flavors/app_prod.dart
 	@echo 'QA build process completed'
 
 1eo_dev_apk:
 	@echo 'run project with qa config'
-	flutter build apk --flavor oeo_dev --target lib/flavors/app_qa.dart
+	flutter build apk --flavor dev --target lib/flavors/app_qa.dart
 	@echo 'QA build process completed'
 
 1eo_prod_apk:
 	@echo 'run project with qa config'
-	flutter build apk --flavor oeo_prod --target lib/flavors/app_prod.dart
+	flutter build apk --flavor prod --target lib/flavors/app_prod.dart
 	@echo 'QA build process completed'
 
 build_oeo_dev:
 	@echo 'start building project Dev'
-	flutter build ios --flavor oeo_dev --target lib/flavors/app_qa.dart
+	flutter build ios --flavor dev --target lib/flavors/app_qa.dart
 	@echo 'Done build OEO Dev'
 
 build_oeo_prod:
 	@echo 'start building project Prod'
-	flutter build ios --flavor oeo_prod --target lib/flavors/app_prod.dart
+	flutter build ios --flavor prod --target lib/flavors/app_prod.dart
 	 @echo 'Done build OEO Prod'
 
 

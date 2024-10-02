@@ -33,8 +33,8 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 
 - Added Camera in feature folder to take profile picture with some overlay.
-  -[Take a picture using the camera](https://docs.flutter.dev/cookbook/plugins/picture-using-camera)
-  -[Overlay](https://stackoverflow.com/questions/75669458/how-to-make-this-kind-of-camera-overlay-in-flutter)  
+  - [Take a picture using the camera](https://docs.flutter.dev/cookbook/plugins/picture-using-camera)
+  - [Overlay](https://stackoverflow.com/questions/75669458/how-to-make-this-kind-of-camera-overlay-in-flutter)  
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

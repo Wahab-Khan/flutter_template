@@ -6,6 +6,12 @@ A new Flutter project Template.
 
 This project is a starting point for a Flutter application.That have all necessary boilder plate code and dependencies that need to make a flutter application.
 
+
+- A few resources to get you started if this is your first Flutter project:
+  - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+  - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+
 - Flutter application flavours
 
   - For Further Info check follwing links:
@@ -14,26 +20,21 @@ This project is a starting point for a Flutter application.That have all necessa
     - [Create Build Flavor in Flutter Application (iOS & Android)](https://dwirandyh.medium.com/create-build-flavor-in-flutter-application-ios-android-fb35a81a9fac)
 
 - Differnt app icons for Dev and Prod envirment.
-
   - [Icon generator](https://www.appicon.co/)
 
 - Differnt Splash screens for Dev and Prod envirment,check the provided link for more information.
-
   - [Flutter native splash](https://pub.dev/packages/flutter_native_splash)
 
 - Add differnt Locale (Lauguage supports) en and ar, check the provided link for more information.
-
   - [Easy Localization](https://pub.dev/packages/easy_localization)
   - run this command to generate locale_keys file : flutter pub run easy_localization:generate -S assets/translations -f keys -O "lib/translations" -o locale_keys.g.dart (this command is missing for obove link)
 
 - Preserve Locale with Shared preferences
-
   - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Added Camera in feature folder to take profile picture with some overlay.
+  -[Take a picture using the camera](https://docs.flutter.dev/cookbook/plugins/picture-using-camera)
+  -[Overlay](https://stackoverflow.com/questions/75669458/how-to-make-this-kind-of-camera-overlay-in-flutter)  
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

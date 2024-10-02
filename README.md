@@ -36,6 +36,13 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Take a picture using the camera](https://docs.flutter.dev/cookbook/plugins/picture-using-camera)
   - [Overlay](https://stackoverflow.com/questions/75669458/how-to-make-this-kind-of-camera-overlay-in-flutter)  
 
+- Added the Makefile to run the scripts for added local , make and run build and deploy web app 
+  - make sure to Add Makefile on the root directory 
+  - [Publish your Flutter Web Apps on GitHub Pages for Free](https://codewithandrea.com/articles/flutter-web-github-pages/)
+  - [Flutter Web Hosting With Github Pages & Custom Domain](https://www.youtube.com/watch?v=iOra0bxlWdE&ab_channel=1ManStartup)
+  
+
+
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.

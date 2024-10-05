@@ -45,9 +45,9 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Store API Keys](https://codewithandrea.com/articles/flutter-api-keys-dart-define-env-files/) 
 
 - Added [Dio](https://pub.dev/packages/dio) and [RiverPod](https://pub.dev/packages/flutter_riverpod) to make a network request using [API](https://jsonplaceholder.typicode.com/) with some network exception handling  
-  - (video reference)[https://www.youtube.com/watch?v=soTEOI_rIIQ&ab_channel=RobertBrunhage]
+  - [video reference](https://www.youtube.com/watch?v=soTEOI_rIIQ&ab_channel=RobertBrunhage)
   Above Video has some out dated syntax to you can take help with following documentation
-  - (Riverpod)[https://codewithandrea.com/articles/flutter-state-management-riverpod/#2-stateprovider]
+  - [Riverpod](https://codewithandrea.com/articles/flutter-state-management-riverpod/#2-stateprovider)
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

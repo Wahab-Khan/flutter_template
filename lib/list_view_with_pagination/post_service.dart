@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_template/list_view_with_pagination/execption.dart';
 import 'package:flutter_template/list_view_with_pagination/posts_data_model.dart';
 
 class PostsService {
@@ -9,16 +10,15 @@ class PostsService {
 
   //should be users model
   Future<List<PostsModel>> getPosts() async {
-    final response = await _dio.get(_postsURL);
-    // final result = postModelFromJson(response.data);
-    if (response.statusCode == 200) {
+    try {
+      final response = await _dio.get(_postsURL);
       // final List<dynamic> data = response.data;
       // return data.map((json) => PostsModel.fromMap(json)).toList();
       final List<dynamic> data = response.data;
       return data.map((json) => PostsModel.fromMap(json)).toList();
       return postModelFromData(response.data);
-    } else {
-      throw Exception('Failed to load posts');
+    } on DioException catch (e) {
+      throw NetworkException.fromDioError(e);
     }
   }
 }

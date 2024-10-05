@@ -1,4 +1,5 @@
 {
   "API_KEY": "dev_api_key_a1b2c33d4e5f6g7h8i9jakblc",
-  "STRIPE_PUBLISHABLE_KEY": "pk_test_aposdjpa309u2n230ibt23908g"
+  "STRIPE_PUBLISHABLE_KEY": "pk_test_aposdjpa309u2n230ibt23908g",
+  "base_URL" : "https://jsonplaceholder.typicode.com/posts"
 }

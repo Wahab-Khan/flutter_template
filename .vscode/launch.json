@@ -4,12 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "flutter_template Prod",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
-            "program": "lib/app_prod.dart",
+            "program": "${workspaceFolder}/lib/flavors/app_prod.dart",
              "args": ["--flavor","prod", "--target" , "lib/app_prod.dart"]
         },
         {
@@ -17,8 +18,11 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
-            "program": "lib/app_qa.dart",
-            "args": ["--flavor","dev", "--target" , "lib/app_qa.dart"]
+            "program": "lib/flavors/app_qa.dart",
+            "args": ["--flavor","dev",
+             "--target" , "lib/flavors/app_qa.dart",
+             "--dart-define-from-file",
+        "api-keys.dev.json"]
         }
     ,
         // {

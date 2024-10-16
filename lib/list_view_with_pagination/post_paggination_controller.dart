@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/list_view_with_pagination/post_list.dart';
 import 'package:flutter_template/list_view_with_pagination/post_paggination_model.dart';
 import 'package:flutter_template/list_view_with_pagination/post_service.dart';
 

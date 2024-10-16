@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 List<PostsModel> postModelFromData(dynamic data) =>
     List<PostsModel>.from(data.map((x) => PostsModel.fromMap(x)));
 
@@ -17,7 +15,6 @@ class PostsModel {
     required this.body,
   });
 
-  @override
   // bool operator ==(Object other) =>
   //     identical(this, other) ||
   //     (other is PostsModel &&
@@ -57,10 +54,10 @@ class PostsModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'userId': this.userId,
-      'id': this.id,
-      'title': this.title,
-      'body': this.body,
+      'userId': userId,
+      'id': id,
+      'title': title,
+      'body': body,
     };
   }
 

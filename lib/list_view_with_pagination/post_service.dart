@@ -23,7 +23,7 @@ class PostsService {
   //should be users model
   Future<List<PostsModel>> getPosts(int pageNo) async {
     try {
-      final url = "${_postsURL}?_start=$pageNo&_limit=20";
+      final url = "$_postsURL?_start=$pageNo&_limit=20";
       final response = await _dio.get(url);
       // final List<dynamic> data = response.data;
       // return data.map((json) => PostsModel.fromMap(json)).toList();

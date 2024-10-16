@@ -101,9 +101,9 @@ class _PostListScreenState extends ConsumerState<PostListScreen> {
 
 class _ErrorBody extends ConsumerWidget {
   const _ErrorBody({
-    Key? key,
+    super.key,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String message;
 

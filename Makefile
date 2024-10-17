@@ -9,6 +9,11 @@ run_trans:
 # --flavour value for iOS is scheme name
 # to make thing simple make sure name are same for both productFlavors for android and scheme for iOS.This will make same line of code work for both envirments
 
+river_gen: 
+	@echo 'start generating riverpod code'
+	flutter pub run build_runner watch -d 
+	@echo 'riverpod generator stopned'
+
 1eo_dev:
 	@echo 'run project with qa config'
 	flutter run --dart-define-from-file=api-keys.dev.json --flavor dev --target lib/flavors/app_qa.dart

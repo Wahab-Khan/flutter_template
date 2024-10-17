@@ -5,6 +5,7 @@ import 'package:flutter_template/flavors/flavour_config.dart';
 import 'package:flutter_template/feature/camera/profile_picture.dart';
 import 'package:flutter_template/feature/setting/setting_screen.dart';
 import 'package:flutter_template/list_view_with_pagination/post_list.dart';
+import 'package:flutter_template/list_view_with_riverpod_generator/data_list.dart';
 import 'package:flutter_template/translations/locale_keys.g.dart';
 
 enum ScreensData { camera, item, settings }
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   ];
 
-  final List<Widget> _screens = [Home(), PostListScreen(), Home()];
+  final List<Widget> _screens = [Home(), PostListScreen(), DataList()];
 
   final List<String> _appTitles = [
     "${FlavorConfig.instance.flavor} App",

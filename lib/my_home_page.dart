@@ -6,6 +6,7 @@ import 'package:flutter_template/feature/camera/profile_picture.dart';
 import 'package:flutter_template/feature/setting/setting_screen.dart';
 import 'package:flutter_template/list_view_with_pagination/post_list.dart';
 import 'package:flutter_template/list_view_with_riverpod_generator/data_list.dart';
+import 'package:flutter_template/list_view_with_riverpod_generator/data_list_with_pagination.dart';
 import 'package:flutter_template/translations/locale_keys.g.dart';
 
 enum ScreensData { camera, item, settings }
@@ -73,16 +74,26 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.settings),
-      label: 'Settings',
+      label: 'Data list',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.list),
+      label: 'Pagination with G',
     ),
   ];
 
-  final List<Widget> _screens = [Home(), PostListScreen(), DataList()];
+  final List<Widget> _screens = [
+    Home(),
+    PostListScreen(),
+    DataList(),
+    PostPagginationListView()
+  ];
 
   final List<String> _appTitles = [
     "${FlavorConfig.instance.flavor} App",
     "Users List",
-    "Settings"
+    "List with gen",
+    "List With pagination gen"
   ];
 
   void _onItemTapped(int index) {
@@ -115,6 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: _bottomNavigationBarItems,
         currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black12,
         onTap: _onItemTapped,
       ),
     );

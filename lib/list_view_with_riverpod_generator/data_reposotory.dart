@@ -11,9 +11,9 @@ class DataReposotory {
 
   Future<List<PostsModel>> getAllPosts() async {
     try {
-      final responce =
+      final response =
           await dio.get("https://jsonplaceholder.typicode.com/posts");
-      final List<dynamic> result = responce.data;
+      final List<dynamic> result = response.data;
       return result.map((map) => PostsModel.fromMap(map)).toList();
     } on DioException catch (e) {
       throw NetworkException.fromDioError(e);
@@ -26,6 +26,17 @@ class DataReposotory {
           await dio.get("https://jsonplaceholder.typicode.com/posts/$id");
       final data = response.data;
       return PostsModel.fromMap(data);
+    } on DioException catch (e) {
+      throw NetworkException.fromDioError(e);
+    }
+  }
+
+  Future<List<PostsModel>> getPostWithPage(int pageNo) async {
+    try {
+      final response = await dio.get(
+          "https://jsonplaceholder.typicode.com/posts?_start=${pageNo}&_limit=10");
+      final List<dynamic> result = response.data;
+      return result.map((map) => PostsModel.fromMap(map)).toList();
     } on DioException catch (e) {
       throw NetworkException.fromDioError(e);
     }

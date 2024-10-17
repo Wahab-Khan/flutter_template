@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_template/list_view_with_pagination/execption.dart';
 import 'package:flutter_template/list_view_with_pagination/posts_data_model.dart';
 
 class DataReposotory {
@@ -8,16 +10,24 @@ class DataReposotory {
   });
 
   Future<List<PostsModel>> getAllPosts() async {
-    final responce =
-        await dio.get("https://jsonplaceholder.typicode.com/posts");
-    final List<dynamic> result = responce.data;
-    return result.map((map) => PostsModel.fromMap(map)).toList();
+    try {
+      final responce =
+          await dio.get("https://jsonplaceholder.typicode.com/posts");
+      final List<dynamic> result = responce.data;
+      return result.map((map) => PostsModel.fromMap(map)).toList();
+    } on DioException catch (e) {
+      throw NetworkException.fromDioError(e);
+    }
   }
 
   Future<PostsModel> getPostwithID(int id) async {
-    final response =
-        await dio.get("https://jsonplaceholder.typicode.com/posts/$id");
-    final data = response.data;
-    return PostsModel.fromMap(data);
+    try {
+      final response =
+          await dio.get("https://jsonplaceholder.typicode.com/posts/$id");
+      final data = response.data;
+      return PostsModel.fromMap(data);
+    } on DioException catch (e) {
+      throw NetworkException.fromDioError(e);
+    }
   }
 }

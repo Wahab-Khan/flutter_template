@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/feature/home.dart';
+import 'package:flutter_template/feature/logger/my_logger.dart';
 import 'package:flutter_template/feature/routing/routing_screen.dart';
 import 'package:flutter_template/flavors/flavour_config.dart';
 import 'package:flutter_template/feature/camera/profile_picture.dart';
@@ -10,7 +11,7 @@ import 'package:flutter_template/list_view_with_riverpod_generator/data_list.dar
 import 'package:flutter_template/list_view_with_riverpod_generator/data_list_with_pagination.dart';
 import 'package:flutter_template/translations/locale_keys.g.dart';
 
-enum ScreensData { camera, routing, item, settings }
+enum ScreensData { camera, routing, logger, item, settings }
 
 IconData getScreenIcon(ScreensData screen) {
   switch (screen) {
@@ -18,6 +19,8 @@ IconData getScreenIcon(ScreensData screen) {
       return Icons.camera;
     case ScreensData.routing:
       return Icons.navigation;
+    case ScreensData.logger:
+      return Icons.print;
     case ScreensData.settings:
       return Icons.settings;
     case ScreensData.item:
@@ -38,6 +41,11 @@ Object navigateToScreen(ScreensData screen, BuildContext context) {
       return Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const RoutingScreen()),
+      );
+    case ScreensData.logger:
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyLogger()),
       );
     case ScreensData.settings:
       return Navigator.push(

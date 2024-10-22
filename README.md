@@ -62,6 +62,8 @@ This project is a starting point for a Flutter application.That have all necessa
   - Sentex in above bloc is quite old but still working
   - You can also consider using other router mechanism like [Go Router](https://pub.dev/packages/go_router)
 
+- Use [Logger](https://pub.dev/packages/logger) for print beautiful logs and meke it easy to read.
+
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.

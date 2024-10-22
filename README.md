@@ -57,6 +57,7 @@ This project is a starting point for a Flutter application.That have all necessa
   - [Riverpod](https://codewithandrea.com/articles/flutter-state-management-riverpod/#2-stateprovider)
 
 - Added Routes basic push, pop ,maybePop, canPop , pushNamedAndRemoveUntil , popUntil
+
   - [Routes](https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31)
   - Sentex in above bloc is quite old but still working
   - You can also consider using other router mechanism like [Go Router](https://pub.dev/packages/go_router)

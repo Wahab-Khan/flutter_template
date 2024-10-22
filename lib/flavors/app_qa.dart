@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/Themes/darktheme.dart';
 import 'package:flutter_template/Utils/UtilsHelper.dart';
+import 'package:flutter_template/feature/routing/screen1.dart';
+import 'package:flutter_template/feature/routing/screen2.dart';
+import 'package:flutter_template/feature/routing/screen3.dart';
+import 'package:flutter_template/feature/routing/screen4.dart';
 import 'package:flutter_template/flavors/flavour_config.dart';
-import 'package:flutter_template/my_home_page.dart';
+import 'package:flutter_template/feature/my_home_page.dart';
 
 import '../Themes/theme.dart';
 
@@ -43,7 +47,15 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: theme,
       darkTheme: darkTheme,
-      // routes: ,
+      routes: {
+        '/home': (context) => MyHomePage(),
+        '/screen1': (context) => Screen1(),
+        '/screen2': (context) => Screen2(),
+        '/screen3': (context) => Screen3(),
+        '/screen4': (context) {
+          return Screen4();
+        },
+      },
       home: MyHomePage(),
     );
   }

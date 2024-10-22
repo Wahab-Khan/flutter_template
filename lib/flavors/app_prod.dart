@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/Utils/UtilsHelper.dart';
 import 'package:flutter_template/flavors/flavour_config.dart';
-import 'package:flutter_template/my_home_page.dart';
+import 'package:flutter_template/feature/my_home_page.dart';
 
 import '../Themes/darktheme.dart';
 import '../Themes/theme.dart';

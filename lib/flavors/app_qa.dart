@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/Themes/darktheme.dart';
 import 'package:flutter_template/Utils/UtilsHelper.dart';
+import 'package:flutter_template/feature/routing/logger_navigator_observer.dart';
 import 'package:flutter_template/feature/routing/screen1.dart';
 import 'package:flutter_template/feature/routing/screen2.dart';
 import 'package:flutter_template/feature/routing/screen3.dart';
@@ -41,6 +42,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App QA Version',
+      navigatorObservers: [
+        LoggerNavigatorObserver(),
+      ],
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

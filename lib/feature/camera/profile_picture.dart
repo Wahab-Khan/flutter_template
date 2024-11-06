@@ -36,6 +36,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text('Take Profile Picture')),
         body: Center(
           child: GestureDetector(
             onTap: () async {

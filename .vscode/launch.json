@@ -11,7 +11,7 @@
             "type": "dart",
             "flutterMode": "debug",
             "program": "${workspaceFolder}/lib/flavors/app_prod.dart",
-             "args": ["--flavor","prod", "--target" , "lib/app_prod.dart"]
+             "args": ["--flavor","prod", "--target" , "lib/flavors/app_prod.dart"]
         },
         {
             "name": "flutter_template QA",
@@ -19,10 +19,11 @@
             "type": "dart",
             "flutterMode": "debug",
             "program": "lib/flavors/app_qa.dart",
-            "args": ["--flavor","dev",
-             "--target" , "lib/flavors/app_qa.dart",
-             "--dart-define-from-file",
-        "api-keys.dev.json"]
+            "args": [
+                "--flavor","dev",
+                "--target" , "lib/flavors/app_qa.dart",
+                "--dart-define-from-file", "api-keys.dev.json"
+            ]
         }
     ,
         // {
